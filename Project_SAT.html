@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student Attendance Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: honeydew;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 2rem;
+    }
+
+    .student {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+
+    .roll,
+    .buttons,
+    .status {
+      flex: 1 1 30%;
+      text-align: center;
+      margin: 5px 0;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+
+    .present {
+      color: green;
+    }
+
+    .absent {
+      color: red;
+    }
+
+    .summary {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    #total-present {
+      font-weight: bold;
+      color: green;
+    }
+
+    #total-absent {
+      font-weight: bold;
+      color: red;
+    }
+
+    p {
+      margin: 5px auto;
+      font-size: 1.2rem;
+    }
+
+    button {
+      margin: 3px;
+      padding: 6px 12px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .controls {
+      margin-top: 30px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .student {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .i, .buttons, .status {
+        width: 100%;
+        text-align: left;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-left: 0;
+      }
+
+      .summary {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Student Attendance Tracker</h1>
+  <div id="student-list"></div>
+
+  <div class="summary">
+    <p>Total Present: <span id="total-present">0</span></p>
+    <p>Total Absent: <span id="total-absent">46</span></p>
+  </div>
+
+  <div class="controls">
+    <button onclick="resetAttendance()">Reset Attendance</button>
+    <button onclick="saveAttendance()">Save Attendance</button>
+  </div>
+  
+  <script>
+    var statuses = {};
+    var studentList = document.getElementById("student-list");
+
+    for (var i = 501; i <= 546; i++) {
+      statuses[i] = "Absent";
+
+      var row = ` <div class="student" id="student-${i}">
+                  <div class="roll">Roll No. ${i}</div>
+                  <div class="buttons">
+                    <button onclick="markPresent(${i} , this)">Present</button>
+                    <button onclick="markAbsent(${i} , this)">Absent</button>
+                  </div>
+                  <div class="status absent" id="status-${i}">Absent</div>
+                  </div> `
+      studentList.innerHTML += row;
+    }
+
+    function markPresent(i) {
+      statuses[i] = "Present";
+      var statusElem = document.getElementById("status-" + i);
+      statusElem.innerText = "Present";
+      statusElem.className = "status present";
+      updateSummary();
+    }
+
+    function markAbsent(i) {
+      statuses[i] = "Absent";
+      var statusElem = document.getElementById("status-" + i);
+      statusElem.innerText = "Absent";
+      statusElem.className = "status absent";
+      updateSummary();
+    }
+
+    function updateSummary() {
+      var present = 0;
+      var absent = 0;
+      for (var i = 501; i <= 546; i++) {
+        if (statuses[i] === "Present") present++;
+        else absent++;
+      }
+      document.getElementById("total-present").innerText = present;
+      document.getElementById("total-absent").innerText = absent;
+    }
+
+    function resetAttendance() {
+      for (var i = 501; i <= 546; i++) {
+        statuses[i] = "Absent";
+        var statusElem = document.getElementById("status-" + i);
+        statusElem.innerText = "Absent";
+        statusElem.className = "status absent";
+      }
+      updateSummary();
+    }
+
+    function saveAttendance() {
+      console.log("Saved Attendance Data:");
+      console.log(statuses);
+      alert("Attendance saved to console!");
+    }
+
+  </script>
+
+</body>
+
+</html>
