@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page using html and javascript</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="username" placeholder="enter username" name="username">
+        <br>
+        <br>
+        <input type="password" id="password" placeholder="enter password" name="password">
+        <br>
+        <br>
+        <button onclick="login()">Login</button>
+    </form>
+
+    <script>
+        function login() {
+            var a = document.getElementsByName("username");
+            var b = document.getElementsByName("password");
+            if (a[0].value == 'darshan' && b[0].value == 1234) {
+                alert("Login Success");
+            }
+            else {
+                alert("invalid input");
+            }
+
+            var a1 = document.getElementById("username");
+            var b1 = document.getElementById("password");
+            if (a1.value == 'darshan' && b1.value == 1234) {
+                alert("Login Success");
+            }
+            else {
+                alert("invalid input");
+            }
+        }    
+    </script>
+</body>
+
+</html>

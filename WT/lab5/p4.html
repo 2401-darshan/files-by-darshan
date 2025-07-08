@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            text-align: center;
+            margin-top: 150px;
+            background-color: aqua;
+            color: black;
+        }
+
+        body {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="f(event)">
+        <p>
+            <label for="username">Username: </label>
+            <input type="text" id="username" placeholder="Enter Username">
+        </p>
+        <p>
+            <label for="password">Password: </label>
+            <input type="password" id="password" placeholder="Enter password" required>
+        </p>
+        <p>
+            <label for="password">Confirm Password: </label>
+            <input type="password" id="repeatPassword" placeholder="Confirm password" required>
+        </p>
+        <p>
+            <label for="dateOfBirth">Date of Birth: </label>
+            <input type="date" id="dateOfBirth" required>
+        </p>
+        <p>
+            <label for="enrollment">Enrollment no: </label>
+            <input type="number" id="enroll" placeholder="Enter enrollment number" required>
+        </p>
+        <p>
+            <label for="email">Email: </label>
+            <input type="text" id="email" placeholder="Enter email id" required>
+        </p>
+        <button>Submit</button>
+    </form>
+
+    <script>
+        function f(event) {
+            event.preventDefault();
+
+            var u = document.getElementById("username").value;
+            ptn1 = "^[a-zA-Z_.]{8,}$";
+
+            UregExp = new RegExp(ptn1);
+            if (!UregExp.test(username)) {
+
+            } else {
+                alert("Enter minimum 8 characters")
+            }
+
+            var p = document.getElementById("password").value;
+            var rp = document.getElementById("repeatPassword").value;
+            ptn2 = /^(?=.\d)(?=.[!@#$%^&])[A-Za-z\d!@#$%^&]{8,12}$/;
+            PregExp = new RegExp(ptn2);
+
+            if (PregExp.test(password)) {
+                if (password == repeatPassword) {
+                    alert("Password and confirm password are same");
+                }
+                else {
+                    alert("password should contain minimum 8 characters, one letter, one digit and one special character");
+                }
+            }
+
+            var en = document.getElementById("enroll").value;
+            ptn3 = "^[0-9]{11}$";
+            ENregExp = new RegExp(ptn3);
+
+            if (!ENregExp.test(enroll)) {
+
+            } else {
+                alert("Enrollment number should be 11 digit");
+            }
+
+            var email = document.getElementById("email").value;
+            ptn4 = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            EmailregExp = new RegExp(ptn4);
+
+            if (!EmailregExp.test(email)) {
+
+            } else {
+                alert("invalid email");
+            }
+
+            var dateofBirth = document.getElementById("dateofBirth").value;
+            d = new Date(dateofBirth);
+            y = d.getFullYear();
+            age = 2025 - y;
+            if (age < 18) {
+                alert("Age must be at least 18 years");
+            } else {
+                alert("Valid age");
+            }
+        }
+    </script>
+</body>
+
+</html>
