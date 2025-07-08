@@ -33,7 +33,7 @@ USE Bsc_Hons_506
 	
 	SELECT * FROM DEPOSIT_DETAIL
 
-----------------------Part – B-------------------: 
+----------------------Part â€“ B-------------------: 
 --1. Rename Column ADATE to AOPENDATE OF DEPOSIT_DETAIL table.
 	SP_RENAME 'DEPOSIT_DETAIL.ADATE', 'AOPENDATE'
 
@@ -48,7 +48,7 @@ USE Bsc_Hons_506
 	ALTER TABLE DEPOSIT_DETAIL
 	ADD COUNTRY VARCHAR(20)
  
-----------------Part – C-------------: 
+----------------Part â€“ C-------------: 
 
 CREATE TABLE STUDENT_DETAIL(
 	ENROLLMENT_NO VARCHAR(20),
@@ -111,7 +111,7 @@ CREATE TABLE DEPOSIT_DETAIL(
 	DELETE FROM DEPOSIT_DETAIL
 	WHERE ANO BETWEEN 102 AND 105
 
---4. Delete all the accounts whose branch is ‘AJNI’ or ‘POWAI’ 
+--4. Delete all the accounts whose branch is â€˜AJNIâ€™ or â€˜POWAIâ€™ 
 	DELETE FROM DEPOSIT_DETAIL
 	WHERE BNAME IN('AJNI', 'POWAI')
 
@@ -130,7 +130,7 @@ CREATE TABLE DEPOSIT_DETAIL(
 
 
 
-----------------Part – B:
+----------------Part â€“ B:
 
 CREATE TABLE EMPLOYEE_MASTER(
 	EmpNo INT, 
@@ -157,7 +157,7 @@ SELECT * FROM EMPLOYEE_MASTER
 	DELETE FROM EMPLOYEE_MASTER
 	WHERE SALARY>=14000;
 
---2. Delete all the Employees who belongs to ‘RAJKOT’ city. 
+--2. Delete all the Employees who belongs to â€˜RAJKOTâ€™ city. 
 	DELETE FROM EMPLOYEE_MASTER
 	WHERE CITY='RAJKOT';
 
@@ -182,3 +182,25 @@ SELECT * FROM EMPLOYEE_MASTER
 
 --8. Remove Employee_MASTER table. (Use Drop)
 	DROP TABLE Employee_MASTER;
+
+
+---------------Part â€“ C: 
+
+--1. Summarize Delete, Truncate and Drop
+
+CREATE TABLE PRODUCT(
+	NAME VARCHAR(20),
+	PRICE INT
+);
+
+INSERT INTO PRODUCT VALUES
+('MILK', 30),
+('CHOCO', 10),
+('BHUNGRA', 55);
+
+DELETE FROM PRODUCT 
+WHERE PRICE = 10
+
+TRUNCATE TABLE PRODUCT
+
+DROP TABLE PRODUCT
