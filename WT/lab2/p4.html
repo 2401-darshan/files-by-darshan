@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const n = parseInt(prompt("Enter the two-digit number : "));
+        if (n >= 10 && n <= 99) {
+            let result = 0;
+            let firstDigit = math.floor(n % 10);
+            let secondDigit = n / 10;
+            result = firstDigit * firstDigit * secondDigit;
+            document.write("Result = " + result);
+        } else {
+            document.write("Error: Invalid input.");
+        }
+    </script>
+</body>
+
+</html>
