@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Ride - Carpool</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      padding: 10px 0 10px 0;
+      padding-left: 10px;
+    }
+
+    .nav-button {
+      margin-left: 10px;
+    }
+
+    .search-box {
+      max-width: 500px;
+      margin: auto;
+      margin-top: 40px;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">SEARCH RIDE</a>
+      <div class="ms-auto">
+        <a href="index.html" class="btn btn-light nav-button">HOME</a>
+        <a href="search-ride.html" class="btn btn-light nav-button">SEARCH RIDE</a>
+        <a href="offer-ride.html" class="btn btn-light nav-button">OFFER RIDE</a>
+        <a href="profile.html" class="btn btn-light nav-button">PROFILE</a>
+        <a href="contact.html" class="btn btn-light nav-button">CONTACT US</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div style="text-align: center; margin-top: 50px;">
+      <h1>Find Your Ride</h1>
+      <p>Search for available carpool rides nearby you</p>
+    </div>
+
+    <section class="search-box">
+      <form>
+        <div class="mb-3">
+          <label for="from" class="form-label">From*</label>
+          <input type="text" class="form-control" id="from" placeholder="Enter departure city" required>
+        </div>
+        <div class="mb-3">
+          <label for="to" class="form-label">To*</label>
+          <input type="text" class="form-control" id="to" placeholder="Enter destination city" required>
+        </div>
+        <div class="mb-3">
+          <label for="date" class="form-label">Date*</label>
+          <input type="date" class="form-control" id="date" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Search Ride</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Carpooling Project</p>
+  </footer>
+
+</body>
+
+</html>
