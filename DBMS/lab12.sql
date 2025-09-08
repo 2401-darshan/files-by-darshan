@@ -1,4 +1,4 @@
---Part – A:
+--Part â€“ A:
 --1. Combine information from Person and Department table using cross join or Cartesian product.
 	SELECT * FROM PERSON
 	CROSS JOIN DEPT
@@ -28,7 +28,7 @@
 	ON P.DEPARTMENTID = D.DEPARTMENTID
 	WHERE DEPARTMENTNAME = 'MECHANICAL'
 	
---6. Final person’s name, department code and salary who lives in Ahmedabad city.
+--6. Final personâ€™s name, department code and salary who lives in Ahmedabad city.
 	SELECT P.PERSONNAME, D.DEPARTMENTCODE, P.SALARY
 	FROM PERSON P
 	JOIN DEPT D
@@ -49,7 +49,7 @@
 	ON P.DEPARTMENTID = D.DEPARTMENTID
 	WHERE CITY = 'JAMNAGAR'
 	
---9. Retrieve person’s detail who joined the Civil department after 1-Aug-2001.
+--9. Retrieve personâ€™s detail who joined the Civil department after 1-Aug-2001.
 	SELECT P.PERSONNAME
 	FROM PERSON P
 	JOIN DEPT D
@@ -98,7 +98,15 @@
 	GROUP BY P.CITY
 
 --15. Produce Output Like: <PersonName> lives in <City> and works in <DepartmentName> Department. (In
---single column)	SELECT P.PERSONNAME + ' lives in ' + P.CITY + ' and works in ' + D.DEPARTMENTNAME + ' department'	FROM PERSON P	JOIN DEPT D	ON P.DEPARTMENTID = D.DEPARTMENTID--Part – B:
+--single column)
+	SELECT P.PERSONNAME + ' lives in ' + P.CITY + ' and works in ' + D.DEPARTMENTNAME + ' department'
+	FROM PERSON P
+	JOIN DEPT D
+	ON P.DEPARTMENTID = D.DEPARTMENTID
+
+
+
+--Part â€“ B:
 --1. Produce Output Like: <PersonName> earns <Salary> from <DepartmentName> department monthly. (In
 --single column)
 	SELECT P.PERSONNAME + ' earns ' + CAST(P.SALARY AS VARCHAR(50)) + ' from ' + D.DEPARTMENTNAME + ' department monthly.'
@@ -130,7 +138,8 @@
 	GROUP BY D.DEPARTMENTNAME
 	HAVING SUM(P.SALARY) > 100000
 
---Part – C:
+--Part â€“ C:
 --1. List all departments who have no person.
 --2. List out department names in which more than two persons are working.
---3. Give a 10% increment in the computer department employee’s salary. (Use Update)
+
+--3. Give a 10% increment in the computer department employeeâ€™s salary. (Use Update)
