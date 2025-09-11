@@ -1,0 +1,89 @@
+.signup-page {
+    background-color: #d6d2bd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-container {
+    max-width: 1050px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+}
+
+
+.signup-left {
+    padding: 300px 70px;
+    background-color: #f6f6f1;
+}
+
+.signup-left h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.signup-left p {
+    font-size: 22px;
+    color: #555;
+}
+
+.signup-right {
+    padding: 40px 70px;
+    border-left: 1px solid #eee;
+}
+
+.btn-google {
+    border: 1px solid #ddd;
+    background: #fff;
+    font-weight: 600;
+}
+
+.btn-google img {
+    height: 18px;
+    margin-right: 8px;
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.or-divider:not(:empty)::before {
+    margin-right: 10px;
+}
+
+.or-divider:not(:empty)::after {
+    margin-left: 10px;
+}
+
+.form-check-label {
+    font-size: 14px;
+    color: #444;
+}
+
+.btn-primary {
+    background-color: #1877b7;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0d5c91;
+}
+
+.form-text {
+    font-size: 12px;
+    color: #777;
+}
