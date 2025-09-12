@@ -21,7 +21,6 @@ function App() {
             <Route path='/signup' element={<Signup />} />
             <Route path='/layout' element={<Layout />} />
             <Route path='/mybooks' element={<MyBooks />} />
-          
         </Routes>
       </BrowserRouter>
     </>
